@@ -7,7 +7,7 @@ const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
 
-const io = new Server(server, {
+const io = require('socket.io')(server, {
     cors: {
         origin: 'http://localhost:5173',  // React frontend URL
         methods: ['GET', 'POST']
